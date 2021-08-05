@@ -44,3 +44,9 @@ Verify
 ```bash 
 pkg-config modversion opencv4
 ```
+
+## PCL Library
+
+```bash
+sudo apt install libpcl-dev
+```
