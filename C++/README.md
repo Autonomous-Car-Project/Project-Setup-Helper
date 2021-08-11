@@ -38,9 +38,18 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 ```bash
 make -j8
 sudo make install
+ldconfig
+sudo cp /usr/local/lib/pkgconfig/opencv4.pc  /usr/lib/x86_64-linux-gnu/pkgconfig/opencv.pc
+
 ```
 
 Verify 
 ```bash 
 pkg-config modversion opencv4
+```
+
+## PCL Library
+
+```bash
+sudo apt install libpcl-dev
 ```
