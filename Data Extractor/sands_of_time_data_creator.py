@@ -86,10 +86,7 @@ for folder_num, internal_folder in enumerate(internal_folders):
         logger.info("Frame Position and Orientation READ")
     else:
         logger.critical("DANGER!!")
-    for i in range(num_frame):
-        ecef_from_local = quat2rot(frame_orientations[i-1])
-        local_from_ecef = ecef_from_local.T
-        frame_positions_local = np.einsum('ij,kj->ki', local_from_ecef, frame_positions - frame_positions[i-1])
+    
     frame_counter = 0
 
     logger.info("Extracting Frames...")
@@ -98,8 +95,16 @@ for folder_num, internal_folder in enumerate(internal_folders):
         ret, frame = video.read()
         if not ret or frame_counter >= (num_frame - 33):
             break 
+        
+        ecef_from_local = quat2rot(frame_orientations[frame_counter])
+        local_from_ecef = ecef_from_local.T
+        frame_positions_local = np.einsum('ij,kj->ki', local_from_ecef, frame_positions - frame_positions[frame_counter])
+        
+        # Saving File
         cv2.imwrite(f"{img_dir}/{global_frame_counter}.jpg", frame)
         np.save(f"{pose_dir}/{global_frame_counter}.npy", frame_positions_local[frame_counter:frame_counter+33])
+
+        # Counter Update    
         frame_counter += 1
         global_frame_counter += 1
     logger.info(f"{video_file} Processing Complete!")
