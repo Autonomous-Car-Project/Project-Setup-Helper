@@ -1,0 +1,5 @@
+/media/ayushman/Seagate Expansion Drive/TiVRA AI/Repo/Project-Setup-Helper/C++/zmq_c++_python/CMakeFiles/proto.dir
+/media/ayushman/Seagate Expansion Drive/TiVRA AI/Repo/Project-Setup-Helper/C++/zmq_c++_python/CMakeFiles/pub.dir
+/media/ayushman/Seagate Expansion Drive/TiVRA AI/Repo/Project-Setup-Helper/C++/zmq_c++_python/CMakeFiles/myTarget.dir
+/media/ayushman/Seagate Expansion Drive/TiVRA AI/Repo/Project-Setup-Helper/C++/zmq_c++_python/CMakeFiles/edit_cache.dir
+/media/ayushman/Seagate Expansion Drive/TiVRA AI/Repo/Project-Setup-Helper/C++/zmq_c++_python/CMakeFiles/rebuild_cache.dir
